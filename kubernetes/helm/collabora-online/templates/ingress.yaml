@@ -26,4 +26,10 @@ spec:
             name: {{ .Values.global.app.service.name }}
             port:
               number: 9980
+  {{ if .Values.global.ingress.ssl.enabled }}
+  tls:
+  - hosts:
+    {{ .Values.global.ingress.ssl.hosts }}
+    secretName: {{ .Values.global.ingress.name }}-tls
+  {{ end }}  
 {{ end }}
