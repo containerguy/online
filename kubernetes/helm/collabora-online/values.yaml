@@ -26,6 +26,10 @@ global:
     enabled: true
     annotations:
       enabled: false
+    ssl:
+      enabled: true
+      hosts:
+      - coolwsd.public.example.com
   configmap:
     name: collabora-online
 
