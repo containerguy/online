@@ -23,6 +23,9 @@ global:
       internalPort: 9980
   ingress:
     name: collabora-online
+    enabled: true
+    annotations:
+      enabled: false
   configmap:
     name: collabora-online
 
