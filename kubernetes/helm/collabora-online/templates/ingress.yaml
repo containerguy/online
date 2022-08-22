@@ -1,10 +1,10 @@
-{{ if eq .Values.global.ingress.enabled TRUE }}
+{{ if .Values.global.ingress.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Values.global.ingress.name }}
   namespace: {{ .Values.namespace.collabora }}
-  {{ if eq .Values.global.ingress.annotations.enabled TRUE }}
+  {{ if .Values.global.ingress.annotations.enabled }}
   annotations:
     nginx.ingress.kubernetes.io/upstream-hash-by: "$arg_WOPISrc"
     haproxy.org/backend-config-snippet: |
